@@ -1,0 +1,44 @@
+[2024-07-26 20:32:24,803] 59 root - INFO - Received text: A time traveller keeps messing up the timeline creating and erasing multiple possibilities and simultaneously some other scientist who is experimenting to increase human memory power ends up remembering his own life in five different erased timelines as he has gone through all those lives. In each timeline he is a different kind of person so he then has multiple personas in him. The dominating persona is the one who has met the time traveller in his timeline.
+[2024-07-26 20:32:24,810] 30 root - INFO - Input DataFrame: 
+   budget  popularity  runtime  vote_average                                              Story
+0       0           0        0             0  A time traveller keeps messing up the timeline...
+[2024-07-26 20:32:24,828] 35 root - INFO - Transformed Data: 
+  (0, 0)	-0.7192022873121624
+  (0, 1)	-0.6810604684505056
+  (0, 2)	-4.914847733247772
+  (0, 3)	-5.451775428200163
+  (0, 5136)	0.15392102777663846
+  (0, 6140)	0.2098692416836217
+  (0, 6495)	0.17595600800546696
+  (0, 7261)	0.11022597736286668
+  (0, 7428)	0.16782355242236519
+  (0, 7734)	0.17595600800546696
+  (0, 8319)	0.10122938983941349
+  (0, 9307)	0.11350790962875987
+  (0, 10586)	0.0940031587690107
+  (0, 10965)	0.15757787008641688
+  (0, 12022)	0.13692668701225896
+  (0, 12146)	0.12302416236653226
+  (0, 12783)	0.05463954498136314
+  (0, 12912)	0.0764157202856732
+  (0, 13929)	0.11912995511649202
+  (0, 14004)	0.11972871908405391
+  (0, 14604)	0.2738533740245179
+  (0, 15437)	0.059014769186828145
+  (0, 16230)	0.10807494267542778
+  (0, 16231)	0.1620534833597403
+  (0, 16236)	0.17595600800546696
+  (0, 16727)	0.15757787008641688
+  (0, 16771)	0.09632345271713999
+  (0, 17959)	0.17595600800546696
+  (0, 19109)	0.11350790962875987
+  (0, 19810)	0.15082921165798566
+  (0, 21928)	0.14304736320772596
+  (0, 21934)	0.5278680240164009
+  (0, 21935)	0.17595600800546696
+  (0, 22263)	0.3519120160109339
+[2024-07-26 20:32:24,845] 40 root - INFO - Distances: 
+[[0.01688614]]
+[2024-07-26 20:32:24,845] 41 root - INFO - Indices: 
+[[4538]]
+[2024-07-26 20:32:24,845] 68 root - ERROR - General exception: 'dict' object has no attribute 'tolist'

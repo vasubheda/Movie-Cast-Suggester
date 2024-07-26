@@ -1,0 +1,5 @@
+[2024-07-26 15:20:08,689] 17 root - INFO - Entered the data ingestion method
+[2024-07-26 15:20:08,963] 20 root - INFO - Reading the dataset as dataframe
+[2024-07-26 15:20:09,329] 24 root - INFO - Ingestion of data is complete
+[2024-07-26 15:20:09,521] 81 root - INFO - Reading the dataset completed
+[2024-07-26 15:20:09,521] 82 root - INFO - obtaining preprocessing object

@@ -1,0 +1,13 @@
+matplotlib
+nltk
+numpy
+pandas
+scipy
+seaborn
+scikit-learn
+lightgbm
+regex
+dill
+fastapi
+uvicorn
+# -e .

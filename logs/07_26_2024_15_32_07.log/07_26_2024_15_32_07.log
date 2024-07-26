@@ -1,0 +1,8 @@
+[2024-07-26 15:32:12,882] 17 root - INFO - Entered the data ingestion method
+[2024-07-26 15:32:13,045] 20 root - INFO - Reading the dataset as dataframe
+[2024-07-26 15:32:13,352] 24 root - INFO - Ingestion of data is complete
+[2024-07-26 15:32:13,530] 83 root - INFO - Reading the dataset completed
+[2024-07-26 15:32:13,530] 84 root - INFO - obtaining preprocessing object
+[2024-07-26 15:32:13,530] 65 root - INFO - Numerical Columns:['budget', 'popularity', 'runtime', 'vote_average']
+[2024-07-26 15:32:13,530] 66 root - INFO - Story Column:Story
+[2024-07-26 15:32:13,530] 90 root - INFO - Applying preprocessing object

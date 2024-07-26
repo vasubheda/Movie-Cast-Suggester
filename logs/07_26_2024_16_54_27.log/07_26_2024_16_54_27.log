@@ -1,0 +1,12 @@
+[2024-07-26 16:54:29,307] 17 root - INFO - Entered the data ingestion method
+[2024-07-26 16:54:29,367] 20 root - INFO - Reading the dataset as dataframe
+[2024-07-26 16:54:29,437] 24 root - INFO - Ingestion of data is complete
+[2024-07-26 16:54:29,481] 82 root - INFO - Reading the dataset completed
+[2024-07-26 16:54:29,482] 83 root - INFO - obtaining preprocessing object
+[2024-07-26 16:54:29,482] 64 root - INFO - Numerical Columns:['budget', 'popularity', 'runtime', 'vote_average']
+[2024-07-26 16:54:29,482] 65 root - INFO - Story Column:Story
+[2024-07-26 16:54:29,482] 89 root - INFO - Applying preprocessing object
+[2024-07-26 16:55:26,436] 95 root - INFO - Saved preprocessing object.
+[2024-07-26 16:55:26,517] 20 root - INFO - Model training started......
+[2024-07-26 16:55:26,527] 25 root - INFO - .........Model Training is Completed
+[2024-07-26 16:55:26,530] 31 root - INFO - Model Saved.
