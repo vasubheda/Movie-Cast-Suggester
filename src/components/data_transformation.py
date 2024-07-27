@@ -26,6 +26,7 @@ nltk.download('stopwords')
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl')
+    vectorizer_obj_file_path=os.path.join('artifacts','vectorizer.pkl')
 
 class DataTransformation:
     def __init__(self):
@@ -54,12 +55,12 @@ class DataTransformation:
                 ("scaler",StandardScaler())
                 ]
             )
-            text_pipeline=Pipeline(
-                steps=[
-                ("preprocessor",FunctionTransformer(lambda x: x.apply(self.preprocess_text),validate=False)),
-                ("vectorizer",TfidfVectorizer())
-                ]
-            )
+            # text_pipeline=Pipeline(
+            #     steps=[
+            #     ("preprocessor",FunctionTransformer(lambda x: x.apply(self.preprocess_text),validate=False)),
+            #     # ("vectorizer",TfidfVectorizer())
+            #     ]
+            # )
             
             logging.info(f"Numerical Columns:{numerical_features}")
             logging.info(f"Story Column:{text_feature}")
@@ -67,11 +68,11 @@ class DataTransformation:
             preprocessor=ColumnTransformer(
                 [
                 ("num_pipeline",num_pipeline,numerical_features),
-                ("text_pipeline",text_pipeline,text_feature)
+                # ("text_pipeline",text_pipeline,text_feature)
                 ]
             )
             
-            return preprocessor
+            return preprocessor,TfidfVectorizer()
         except Exception as e:
             raise CustomException(e,sys)
         
@@ -82,15 +83,18 @@ class DataTransformation:
             logging.info("Reading the dataset completed")
             logging.info("obtaining preprocessing object")
             
-            preprocessing_obj=self.get_data_transformer_object()
+            preprocessing_obj,vectorizer=self.get_data_transformer_object()
             
             # additional_features=df[['budget','popularity','runtime','vote_average','year']]
+            numerical_features = preprocessing_obj.fit_transform(df)
+            processed_texts = df['Story'].apply(self.preprocess_text)
+            text_features = vectorizer.fit_transform(processed_texts)
             
             logging.info(
                 f"Applying preprocessing object"
             )
             
-            df_to_arr= preprocessing_obj.fit_transform(df)
+            df_to_arr= hstack([numerical_features, text_features])
             
             logging.info(f"Saved preprocessing object.")
             
@@ -98,10 +102,16 @@ class DataTransformation:
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
             )
+            save_object(
+                file_path=self.data_transformation_config.vectorizer_obj_file_path,
+                obj=vectorizer
+            )
+            
             
             return(
-                df_to_arr,
-                self.data_transformation_config.preprocessor_obj_file_path
+                text_features, ###previously we returned df_to_arr in place of text_features
+                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.vectorizer_obj_file_path
             )
             
         except Exception as e:

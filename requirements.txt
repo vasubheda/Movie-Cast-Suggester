@@ -10,4 +10,5 @@ regex
 dill
 fastapi
 uvicorn
+flask
 # -e .

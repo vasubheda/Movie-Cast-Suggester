@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Recommend</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="block">
+            <h1>Movie Cast Suggester</h1>
+            <form action="{{ url_for('recommend_datapoint')}}" method="post">
+                <p>Input Your Story</p>
+                <input type="text" name="story" placeholder="Enter your story">
+                <br>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Recommed Cast" required />
+                </div>
+            </form>
+            <h2>The best suitable cast for your story seems to be {{results}}</h2>
+        </div> 
+    </body>
+</html>
